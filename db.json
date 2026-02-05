@@ -1,0 +1,184 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Nhà Giả Kim",
+      "author": "Paulo Coelho",
+      "description": "Tiểu thuyết về hành trình theo đuổi ước mơ của Santiago.",
+      "price": 79000,
+      "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học nước ngoài"
+    },
+    {
+      "id": 2,
+      "title": "Đắc Nhân Tâm",
+      "author": "Dale Carnegie",
+      "description": "Nghệ thuật thu phục lòng người.",
+      "price": 86000,
+      "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800",
+      "category": "Kỹ năng sống"
+    },
+    {
+      "id": 3,
+      "title": "Tuổi Trẻ Đáng Giá Bao Nhiêu",
+      "author": "Rosie Nguyễn",
+      "description": "Cuốn sách truyền cảm hứng cho giới trẻ.",
+      "price": 60000,
+      "image": "https://images.unsplash.com/photo-1555116505-a1d6caef0c23?auto=format&fit=crop&q=80&w=800",
+      "category": "Kỹ năng sống"
+    },
+    {
+      "id": 4,
+      "title": "Mắt Biếc",
+      "author": "Nguyễn Nhật Ánh",
+      "description": "Câu chuyện tình yêu tuổi học trò đầy tiếc nuối.",
+      "price": 110000,
+      "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học Việt Nam"
+    },
+    {
+      "id": 5,
+      "title": "Tôi Thấy Hoa Vàng Trên Cỏ Xanh",
+      "author": "Nguyễn Nhật Ánh",
+      "description": "Hồi ức về tuổi thơ êm đềm và cảm động.",
+      "price": 125000,
+      "image": "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học Việt Nam"
+    },
+    {
+      "id": 6,
+      "title": "Bố Già",
+      "author": "Mario Puzo",
+      "description": "Kiệt tác về thế giới ngầm Mafia.",
+      "price": 150000,
+      "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học nước ngoài"
+    },
+    {
+      "id": 7,
+      "title": "Cà Phê Cùng Tony",
+      "author": "Tony Buổi Sáng",
+      "description": "Những bài học thực tế về cuộc sống và công việc.",
+      "price": 90000,
+      "image": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800",
+      "category": "Kỹ năng sống"
+    },
+    {
+      "id": 8,
+      "title": "Sapiens - Lược Sử Loài Người",
+      "author": "Yuval Noah Harari",
+      "description": "Hành trình của loài người từ vượn cổ đến hiện đại.",
+      "price": 250000,
+      "image": "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&q=80&w=800",
+      "category": "Khoa học"
+    },
+    {
+      "id": 9,
+      "title": "Harry Potter và Hòn Đá Phù Thủy",
+      "author": "J.K. Rowling",
+      "description": "Khởi đầu của cậu bé phù thủy Harry Potter.",
+      "price": 180000,
+      "image": "https://images.unsplash.com/photo-1609866138210-843a8e29ec62?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học nước ngoài"
+    },
+    {
+      "id": 10,
+      "title": "Dế Mèn Phiêu Lưu Ký",
+      "author": "Tô Hoài",
+      "description": "Cuộc phiêu lưu của chú Dế Mèn.",
+      "price": 45000,
+      "image": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học Việt Nam"
+    },
+    {
+      "id": 11,
+      "title": "Tắt Đèn",
+      "author": "Ngô Tất Tố",
+      "description": "Bức tranh hiện thực về nông thôn Việt Nam cũ.",
+      "price": 50000,
+      "image": "https://images.unsplash.com/photo-1516979187457-637125261a43?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học Việt Nam"
+    },
+    {
+      "id": 12,
+      "title": "Những Người Khốn Khổ",
+      "author": "Victor Hugo",
+      "description": "Câu chuyện vĩ đại về tình thương và sự tha thứ.",
+      "price": 300000,
+      "image": "https://images.unsplash.com/photo-1474932430478-367dbb6832c1?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học nước ngoài"
+    },
+    {
+      "id": 13,
+      "title": "Rừng Na Uy",
+      "author": "Haruki Murakami",
+      "description": "Nỗi cô đơn và những mất mát của tuổi trẻ.",
+      "price": 130000,
+      "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học nước ngoài"
+    },
+    {
+      "id": 14,
+      "title": "Đời Ngắn Đừng Ngủ Dài",
+      "author": "Robin Sharma",
+      "description": "Lời khuyên để sống một cuộc đời trọn vẹn.",
+      "price": 75000,
+      "image": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&q=80&w=800",
+      "category": "Kỹ năng sống"
+    },
+    {
+      "id": 15,
+      "title": "Cho Tôi Xin Một Vé Đi Tuổi Thơ",
+      "author": "Nguyễn Nhật Ánh",
+      "description": "Trở lại thế giới trẻ thơ đầy hồn nhiên.",
+      "price": 95000,
+      "image": "https://images.unsplash.com/photo-1577985051167-0d49eec21977?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học Việt Nam"
+    },
+    {
+      "id": 16,
+      "title": "Lược Sử Thời Gian",
+      "author": "Stephen Hawking",
+      "description": "Khám phá vũ trụ và thời gian.",
+      "price": 160000,
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+      "category": "Khoa học"
+    },
+    {
+      "id": 17,
+      "title": "Hai Số Phận",
+      "author": "Jeffrey Archer",
+      "description": "Cuộc đời đầy thăng trầm của hai người đàn ông.",
+      "price": 145000,
+      "image": "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học nước ngoài"
+    },
+    {
+      "id": 18,
+      "title": "Số Đỏ",
+      "author": "Vũ Trọng Phụng",
+      "description": "Tiểu thuyết trào phúng xuất sắc.",
+      "price": 60000,
+      "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học Việt Nam"
+    },
+    {
+      "id": 19,
+      "title": "Chiến Binh Cầu Vồng",
+      "author": "Andrea Hirata",
+      "description": "Nghị lực phi thường của những đứa trẻ nghèo.",
+      "price": 115000,
+      "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+      "category": "Văn học nước ngoài"
+    },
+    {
+      "id": 20,
+      "title": "7 Thói Quen Để Thành Đạt",
+      "author": "Stephen R. Covey",
+      "description": "Những thói quen tạo nên hiệu quả cá nhân.",
+      "price": 200000,
+      "image": "https://images.unsplash.com/photo-1550399105-c4db5fb85c18?auto=format&fit=crop&q=80&w=800",
+      "category": "Kỹ năng sống"
+    }
+  ]
+}
