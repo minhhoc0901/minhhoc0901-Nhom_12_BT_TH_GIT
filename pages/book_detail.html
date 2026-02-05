@@ -1,11 +1,538 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Chi tiết sách - Hệ thống quản lý thư viện">
+    <title>Chi Tiết Sách - Quản Lý Sách</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+            color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-detail-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .book-image-container {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .book-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .book-image:hover {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            padding: 30px;
+            color: white;
+        }
+
+        .book-content {
+            padding: 40px;
+        }
+
+        .book-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .book-author {
+            font-size: 1.3rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .book-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .book-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+        }
+
+        .book-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 32px;
+            padding: 24px;
+            background: #f7fafc;
+            border-radius: 16px;
+            border-left: 4px solid #667eea;
+        }
+
+        .detail-section {
+            margin-bottom: 24px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 15%);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .detail-section:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-value {
+            font-size: 1.15rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .btn-custom {
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-warning-custom {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .btn-success-custom {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .error-container {
+            background: white;
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .error-icon {
+            font-size: 80px;
+            color: #f5576c;
+            margin-bottom: 24px;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            color: #718096;
+            margin-bottom: 32px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .book-title {
+                font-size: 1.8rem;
+            }
+
+            .book-author {
+                font-size: 1.1rem;
+            }
+
+            .book-price {
+                font-size: 2rem;
+            }
+
+            .book-content {
+                padding: 24px;
+            }
+
+            .book-image {
+                height: 400px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn-custom {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Badge Animation */
+        .book-category {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 4px 25px rgba(102, 126, 234, 0.5);
+            }
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
+
 <body>
-    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark"
+        style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" style="font-weight: 700; font-size: 1.3rem;">
+                <i class="fas fa-book"></i> Quản Lý Sách
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Danh sách sách</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search_book.html">Tìm kiếm</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="detail-container mt-4">
+        <!-- Back Button -->
+        <div class="mb-4">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Quay lại danh sách
+            </a>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading-spinner">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="error-container d-none">
+            <div class="error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h2 class="error-title">Không tìm thấy sách</h2>
+            <p class="error-message">Rất tiếc, chúng tôi không thể tìm thấy thông tin sách bạn đang tìm kiếm.</p>
+            <a href="index.html" class="btn btn-primary-custom btn-custom">
+                <i class="fas fa-home"></i>
+                Về trang chủ
+            </a>
+        </div>
+
+        <!-- Book Detail -->
+        <div id="bookDetail" class="book-detail-card d-none">
+            <div class="row g-0">
+                <!-- Book Image -->
+                <div class="col-lg-5">
+                    <div class="book-image-container">
+                        <img id="bookImage" src="" alt="Book Cover" class="book-image">
+                        <div class="image-overlay">
+                            <div id="bookCategoryOverlay" class="book-category"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Information -->
+                <div class="col-lg-7">
+                    <div class="book-content">
+                        <h1 id="bookTitle" class="book-title"></h1>
+                        <div id="bookAuthor" class="book-author">
+                            <i class="fas fa-user-edit"></i>
+                            <span></span>
+                        </div>
+
+                        <div id="bookPrice" class="book-price"></div>
+
+                        <div class="info-card">
+                            <div class="detail-label">
+                                <i class="fas fa-align-left"></i>
+                                Mô tả sách
+                            </div>
+                            <div id="bookDescription" class="book-description"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="detail-section">
+                                    <div class="detail-label">
+                                        <i class="fas fa-tag"></i>
+                                        Thể loại
+                                    </div>
+                                    <div id="bookCategory" class="detail-value"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="detail-section">
+                                    <div class="detail-label">
+                                        <i class="fas fa-barcode"></i>
+                                        Mã sách
+                                    </div>
+                                    <div id="bookId" class="detail-value"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <button class="btn btn-success-custom btn-custom">
+                                <i class="fas fa-shopping-cart"></i>
+                                Thêm vào giỏ hàng
+                            </button>
+                            <button class="btn btn-warning-custom btn-custom">
+                                <i class="fas fa-edit"></i>
+                                Chỉnh sửa
+                            </button>
+                            <button class="btn btn-primary-custom btn-custom">
+                                <i class="fas fa-share-alt"></i>
+                                Chia sẻ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Action JS -->
+    <script src="../action.js"></script>
+
+    <script>
+        // Get book ID from URL parameter
+        function getBookIdFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // Format price with thousands separator
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        // Load and display book details
+        async function loadBookDetail() {
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const errorState = document.getElementById('errorState');
+            const bookDetail = document.getElementById('bookDetail');
+            const bookId = getBookIdFromURL();
+
+            // Check if book ID exists
+            if (!bookId) {
+                loadingSpinner.classList.add('d-none');
+                errorState.classList.remove('d-none');
+                return;
+            }
+
+            try {
+                // Fetch book data
+                const book = await getBookById(bookId);
+
+                // Update page title
+                document.title = `${book.title} - Chi Tiết Sách`;
+
+                // Populate book details
+                document.getElementById('bookImage').src = book.image;
+                document.getElementById('bookImage').alt = book.title;
+                document.getElementById('bookTitle').textContent = book.title;
+                document.getElementById('bookAuthor').querySelector('span').textContent = book.author;
+                document.getElementById('bookPrice').textContent = formatPrice(book.price) + ' đ';
+                document.getElementById('bookDescription').textContent = book.description;
+                document.getElementById('bookCategory').textContent = book.category;
+                document.getElementById('bookCategoryOverlay').textContent = book.category;
+                document.getElementById('bookId').textContent = `#${book.id}`;
+
+                // Show book detail, hide loading
+                loadingSpinner.classList.add('d-none');
+                bookDetail.classList.remove('d-none');
+
+            } catch (error) {
+                console.error('Error loading book detail:', error);
+                loadingSpinner.classList.add('d-none');
+                errorState.classList.remove('d-none');
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            loadBookDetail();
+        });
+    </script>
 </body>
+
 </html>
