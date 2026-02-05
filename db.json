@@ -1,16 +1,7 @@
 {
   "books": [
     {
-      "id": 1,
-      "title": "Nhà Giả Kim",
-      "author": "Paulo Coelho",
-      "description": "Tiểu thuyết về hành trình theo đuổi ước mơ của Santiago.",
-      "price": 79000,
-      "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
-      "category": "Văn học nước ngoài"
-    },
-    {
-      "id": 2,
+      "id": "2",
       "title": "Đắc Nhân Tâm",
       "author": "Dale Carnegie",
       "description": "Nghệ thuật thu phục lòng người.",
@@ -19,7 +10,7 @@
       "category": "Kỹ năng sống"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Tuổi Trẻ Đáng Giá Bao Nhiêu",
       "author": "Rosie Nguyễn",
       "description": "Cuốn sách truyền cảm hứng cho giới trẻ.",
@@ -28,7 +19,7 @@
       "category": "Kỹ năng sống"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Mắt Biếc",
       "author": "Nguyễn Nhật Ánh",
       "description": "Câu chuyện tình yêu tuổi học trò đầy tiếc nuối.",
@@ -37,7 +28,7 @@
       "category": "Văn học Việt Nam"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Tôi Thấy Hoa Vàng Trên Cỏ Xanh",
       "author": "Nguyễn Nhật Ánh",
       "description": "Hồi ức về tuổi thơ êm đềm và cảm động.",
@@ -46,7 +37,7 @@
       "category": "Văn học Việt Nam"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Bố Già",
       "author": "Mario Puzo",
       "description": "Kiệt tác về thế giới ngầm Mafia.",
@@ -55,7 +46,7 @@
       "category": "Văn học nước ngoài"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Cà Phê Cùng Tony",
       "author": "Tony Buổi Sáng",
       "description": "Những bài học thực tế về cuộc sống và công việc.",
@@ -64,7 +55,7 @@
       "category": "Kỹ năng sống"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Sapiens - Lược Sử Loài Người",
       "author": "Yuval Noah Harari",
       "description": "Hành trình của loài người từ vượn cổ đến hiện đại.",
@@ -73,7 +64,7 @@
       "category": "Khoa học"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Harry Potter và Hòn Đá Phù Thủy",
       "author": "J.K. Rowling",
       "description": "Khởi đầu của cậu bé phù thủy Harry Potter.",
@@ -82,7 +73,7 @@
       "category": "Văn học nước ngoài"
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Dế Mèn Phiêu Lưu Ký",
       "author": "Tô Hoài",
       "description": "Cuộc phiêu lưu của chú Dế Mèn.",
@@ -91,7 +82,7 @@
       "category": "Văn học Việt Nam"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Tắt Đèn",
       "author": "Ngô Tất Tố",
       "description": "Bức tranh hiện thực về nông thôn Việt Nam cũ.",
@@ -100,7 +91,7 @@
       "category": "Văn học Việt Nam"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Những Người Khốn Khổ",
       "author": "Victor Hugo",
       "description": "Câu chuyện vĩ đại về tình thương và sự tha thứ.",
@@ -109,7 +100,7 @@
       "category": "Văn học nước ngoài"
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "Rừng Na Uy",
       "author": "Haruki Murakami",
       "description": "Nỗi cô đơn và những mất mát của tuổi trẻ.",
@@ -118,7 +109,7 @@
       "category": "Văn học nước ngoài"
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "Đời Ngắn Đừng Ngủ Dài",
       "author": "Robin Sharma",
       "description": "Lời khuyên để sống một cuộc đời trọn vẹn.",
@@ -127,7 +118,7 @@
       "category": "Kỹ năng sống"
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "Cho Tôi Xin Một Vé Đi Tuổi Thơ",
       "author": "Nguyễn Nhật Ánh",
       "description": "Trở lại thế giới trẻ thơ đầy hồn nhiên.",
@@ -136,7 +127,7 @@
       "category": "Văn học Việt Nam"
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "Lược Sử Thời Gian",
       "author": "Stephen Hawking",
       "description": "Khám phá vũ trụ và thời gian.",
@@ -145,7 +136,7 @@
       "category": "Khoa học"
     },
     {
-      "id": 17,
+      "id": "17",
       "title": "Hai Số Phận",
       "author": "Jeffrey Archer",
       "description": "Cuộc đời đầy thăng trầm của hai người đàn ông.",
@@ -154,7 +145,7 @@
       "category": "Văn học nước ngoài"
     },
     {
-      "id": 18,
+      "id": "18",
       "title": "Số Đỏ",
       "author": "Vũ Trọng Phụng",
       "description": "Tiểu thuyết trào phúng xuất sắc.",
@@ -163,7 +154,7 @@
       "category": "Văn học Việt Nam"
     },
     {
-      "id": 19,
+      "id": "19",
       "title": "Chiến Binh Cầu Vồng",
       "author": "Andrea Hirata",
       "description": "Nghị lực phi thường của những đứa trẻ nghèo.",
@@ -172,7 +163,7 @@
       "category": "Văn học nước ngoài"
     },
     {
-      "id": 20,
+      "id": "20",
       "title": "7 Thói Quen Để Thành Đạt",
       "author": "Stephen R. Covey",
       "description": "Những thói quen tạo nên hiệu quả cá nhân.",
