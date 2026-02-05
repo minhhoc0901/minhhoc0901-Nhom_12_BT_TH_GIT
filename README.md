@@ -2,7 +2,7 @@
 
 ## 👥 THÀNH VIÊN & PHÂN CÔNG NHIỆM VỤ (TASK ASSIGNMENT)
 
-Dưới đây là danh sách chức năng (Feature) được phân công. Các bạn vui lòng **điền Mã số SV và Họ Tên** của mình vào bảng dưới đây.
+Dưới đây là danh sách chức năng (Feature) được phân công. Các bạn vui lòng làm đúng yêu cầu của mình vào bảng dưới đây.
 
 | STT | Họ và Tên | Phụ trách (Alias) | Chức năng (Feature) | Nhánh (Branch Name) | Mô tả chi tiết |
 | :-- | :--- | :--- | :--- | :--- | :--- |
