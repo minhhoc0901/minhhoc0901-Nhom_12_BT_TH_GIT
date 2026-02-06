@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:3000/books";
 
-// ================= LOAD ALL BOOKS (CHO INDEX) =================
+// ================= GET ALL BOOKS (CHO INDEX) =================
 async function getAllBooks() {
     const res = await fetch(API_URL);
     if (!res.ok) throw new Error("Không tải được danh sách sách");
@@ -29,19 +29,25 @@ async function updateBook(id, bookData) {
 }
 
 // ================= EDIT PAGE LOGIC =================
-const params = new URLSearchParams(window.location.search);
-const bookId = params.get("id");
 
 // chỉ chạy khi ở trang edit.html
-if (document.getElementById("editBookForm")) {
-    loadBook();
+const form = document.getElementById("editBookForm");
+if (form) {
+    const params = new URLSearchParams(window.location.search);
+    const bookId = params.get("id");
 
-    document.getElementById("editBookForm").addEventListener("submit", async function (e) {
+    if (!bookId) {
+        alert("❌ Không tìm thấy ID sách!");
+    } else {
+        loadBook(bookId);
+    }
+
+    form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
         const updatedBook = {
-            title: document.getElementById("title").value,
-            author: document.getElementById("author").value,
+            title: document.getElementById("title").value.trim(),
+            author: document.getElementById("author").value.trim(),
             price: Number(document.getElementById("price").value)
         };
 
@@ -55,9 +61,9 @@ if (document.getElementById("editBookForm")) {
     });
 }
 
-async function loadBook() {
+async function loadBook(id) {
     try {
-        const book = await getBookById(bookId);
+        const book = await getBookById(id);
 
         document.getElementById("bookId").value = book.id;
         document.getElementById("title").value = book.title;
