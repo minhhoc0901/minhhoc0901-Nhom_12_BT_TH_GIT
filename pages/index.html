@@ -39,7 +39,7 @@
 
                 <!-- Modal Body -->
                 <div class="modal-body">
-                    <form id="addBookForm">
+                    <form id="addBookForm" onsubmit="AddBook(event)">
 
                         <div class="mb-3">
                             <label class="form-label">Tiêu đề</label>
@@ -63,16 +63,13 @@
                                 <input type="number" class="form-control" name="price" placeholder="Giá sách">
                             </div>
 
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Danh mục</label>
-                                <select class="form-select" name="category">
-                                    <option value="">-- Chọn danh mục --</option>
-                                    <option value="Novel">Tiểu thuyết</option>
-                                    <option value="IT">Công nghệ</option>
-                                    <option value="Education">Giáo dục</option>
-                                    <option value="Science">Khoa học</option>
-                                </select>
-                            </div>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                name="category" 
+                                placeholder="Nhập thể loại (VD: Tiểu thuyết, Kỹ năng sống...)"
+                            >
+
                         </div>
 
                         <div class="mb-3">
@@ -99,6 +96,7 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../action.js"></script>
 </body>
 
 </html>
