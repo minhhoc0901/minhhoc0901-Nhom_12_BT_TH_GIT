@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa sách</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #74ABE2, #5563DE);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 380px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #5563DE;
+            outline: none;
+            box-shadow: 0 0 5px rgba(85, 99, 222, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #5563DE;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #3949ab;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>📚 Sửa thông tin sách</h2>
+
+    <form id="editBookForm">
+        <input type="hidden" id="bookId">
+
+        <div class="form-group">
+            <label>Tên sách</label>
+            <input type="text" id="title" required>
+        </div>
+
+        <div class="form-group">
+            <label>Tác giả</label>
+            <input type="text" id="author" required>
+        </div>
+
+        <div class="form-group">
+            <label>Giá</label>
+            <input type="number" id="price" required>
+        </div>
+
+        <button type="submit">💾 Cập nhật sách</button>
+    </form>
+</div>
+
+<script src="../action.js"></script>
+</body>
+</html>
