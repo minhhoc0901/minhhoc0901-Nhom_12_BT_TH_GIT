@@ -188,6 +188,15 @@
       "price": 9999,
       "category": "Phim Truyền hình",
       "image": "dacnhantam.png"
+    },
+    {
+      "id": "5f79",
+      "title": "Phim Quang Vũ",
+      "author": "Lê Toàn Bân 1000",
+      "description": "Rất Tuyệt ",
+      "price": 10000,
+      "category": "Phim Truyền Hình",
+      "image": "dacnhantam.png"
     }
   ]
 }
