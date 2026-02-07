@@ -64,6 +64,12 @@
             <select id="categoryFilter" class="form-select w-auto d-inline-block" onchange="sortByCategory()">
                 <option value="">-- Tất cả danh mục --</option>
             </select>
+            <select id="priceSort" class="form-select form-select-sm w-auto" onchange="sortByCategory()">
+                <option value="">-- Sắp xếp giá --</option>
+                <option value="asc">Giá tăng dần</option>
+                <option value="desc">Giá giảm dần</option>
+            </select>
+
 
 
             <button class="btn btn-success btn-add-book" data-bs-toggle="modal" data-bs-target="#addBookModal">

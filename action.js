@@ -201,6 +201,7 @@ async function loadCategories() {
 // Sắp xếp sách theo danh mục
 async function sortByCategory() {
     const category = document.getElementById("categoryFilter").value;
+    const priceSort = document.getElementById("priceSort").value;
     const booksList = document.getElementById("booksList");
 
     try {
@@ -208,11 +209,21 @@ async function sortByCategory() {
 
         let filteredBooks = books;
 
+        // ✅ Lọc theo category
         if (category !== "") {
-            filteredBooks = books.filter(book =>
-                book.category &&
-                book.category.trim().toLowerCase() === category.toLowerCase()
-            );
+            const selected = category.trim().toLowerCase();
+            filteredBooks = filteredBooks.filter((book) => {
+                if (!book.category) return false;
+                return book.category.trim().toLowerCase() === selected;
+            });
+        }
+
+        // ✅ Sắp xếp theo giá
+        if (priceSort === "asc") {
+            filteredBooks.sort((a, b) => a.price - b.price);
+        } 
+        else if (priceSort === "desc") {
+            filteredBooks.sort((a, b) => b.price - a.price);
         }
 
         booksList.innerHTML = "";
@@ -221,7 +232,7 @@ async function sortByCategory() {
             booksList.innerHTML = `
                 <div class="col-12">
                     <div class="alert alert-warning">
-                        Không có sách thuộc danh mục này
+                        Không có sách phù hợp
                     </div>
                 </div>
             `;
