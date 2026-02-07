@@ -1,42 +1,6 @@
 {
   "books": [
     {
-      "id": "1",
-      "title": "Nhà Giả Kim",
-      "author": "Paulo Coelho",
-      "description": "Tiểu thuyết về hành trình theo đuổi ước mơ của Santiago.",
-      "price": 79000,
-      "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
-      "category": "Văn học nước ngoài"
-    },
-    {
-      "id": "2",
-      "title": "Đắc Nhân Tâm",
-      "author": "Dale Carnegie",
-      "description": "Nghệ thuật thu phục lòng người.",
-      "price": 86000,
-      "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800",
-      "category": "Kỹ năng sống"
-    },
-    {
-      "id": "3",
-      "title": "Tuổi Trẻ Đáng Giá Bao Nhiêu",
-      "author": "Rosie Nguyễn",
-      "description": "Cuốn sách truyền cảm hứng cho giới trẻ.",
-      "price": 60000,
-      "image": "https://images.unsplash.com/photo-1555116505-a1d6caef0c23?auto=format&fit=crop&q=80&w=800",
-      "category": "Kỹ năng sống"
-    },
-    {
-      "id": "4",
-      "title": "Mắt Biếc",
-      "author": "Nguyễn Nhật Ánh",
-      "description": "Câu chuyện tình yêu tuổi học trò đầy tiếc nuối.",
-      "price": 110000,
-      "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
-      "category": "Văn học Việt Nam"
-    },
-    {
       "id": "5",
       "title": "Tôi Thấy Hoa Vàng Trên Cỏ Xanh",
       "author": "Nguyễn Nhật Ánh",
@@ -196,6 +160,33 @@
       "description": "dhajshdjkasjhdkas",
       "price": 11111,
       "category": "Tuyệt thế",
+      "image": "dacnhantam.png"
+    },
+    {
+      "id": "557a",
+      "title": "Đắc Nhân Tâm",
+      "author": "Lê Toàn Bân",
+      "description": "Cuốn Sách Này rất là hay",
+      "price": 20000,
+      "category": "Truyện Ngắn",
+      "image": "dacnhantam.png"
+    },
+    {
+      "id": "6fa2",
+      "title": "Đắc Nhân Tâm 2",
+      "author": "Lê Toàn Bân 2",
+      "description": "Cuốn sách này rất tuyệt",
+      "price": 10000,
+      "category": "Phim",
+      "image": "dacnhantam.png"
+    },
+    {
+      "id": "eaae",
+      "title": "Trương Phi",
+      "author": "Lê Toàn Bân",
+      "description": "CHất lượng cao",
+      "price": 9999,
+      "category": "Phim Truyền hình",
       "image": "dacnhantam.png"
     }
   ]
