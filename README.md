@@ -4,16 +4,17 @@
 
 Dưới đây là danh sách chức năng (Feature) được phân công. Các bạn vui lòng làm đúng yêu cầu của mình vào bảng dưới đây.
 
-| STT | Họ và Tên | Phụ trách (Alias) | Chức năng (Feature) |Tên github | Nhánh (Branch Name) | Mô tả chi tiết |
-| :-- | :--- | :--- | :--- | :--- | :--- |
-| **1** | **Minh Học** | **minhhoc0901** | **Nhóm trưởng** | Nhóm trưởng |
-| **2** | **Toàn Bân** | **ToanBan** | **Add Book** | `feature/ban/add-book` | Xây dựng Form thêm sách + Viết API thêm sách (Add Book). |
-| **3** | **Mạnh Cường** | **ManhCuong304** | **Edit Book** | `feature/cuong/edit-book` | Xây dựng Form sửa sách + Viết API sửa sách (Edit Book). |
-| **4** | **Thành Nam** | **NamDanney** | **Book Detail** | `feature/nam/book-detail` | Xây dựng trang chi tiết + Viết API hiển thị chi tiết sách. |
-| **5** | **Nhữ Huy** | **Vanivietquat** | **Book Detail** | `feature/nhu-huy/search-book` | Xây dựng giao diện tìm kiếm + Viết API tìm kiếm sách. |
-| **6** | **Minh Huy** | **caominhhuy204** | **List & Delete** | `feature/minh-huy/list-delete` | Xây dựng hiển thị danh sách sách + Chức năng xóa sách (Delete). |
-| **7** | **Anh Kiệt** | **KietAnh160704** | **Sort Book** | `feature/kiet/sort-book` | Chức năng sắp xếp sách theo thứ tự Tăng dần & Giảm dần. |
+## 👥 DANH SÁCH THÀNH VIÊN & PHÂN CÔNG (TASK ASSIGNMENT)
 
+| STT | Thành viên & GitHub | Chức năng (Feature) | Nhánh (Branch Name) | Mô tả chi tiết |
+| :-- | :--- | :--- | :--- | :--- |
+| **1** | **Minh Học** <br> (`@minhhoc0901`) | **TEAM LEADER** | `main` / `develop` | Khởi tạo dự án, Review Code, Merge PR, quản lý tiến độ. |
+| **2** | **Toàn Bân** <br> (`@ToanBan`) | **Add Book** | `feature/ban/add-book` | Xây dựng Form thêm sách + Viết API thêm sách (Add Book). |
+| **3** | **Mạnh Cường** <br> (`@ManhCuong304`) | **Edit Book** | `feature/cuong/edit-book` | Xây dựng Form sửa sách + Viết API sửa sách (Edit Book). |
+| **4** | **Thành Nam** <br> (`@NamDanney`) | **Book Detail** | `feature/nam/book-detail` | Xây dựng trang chi tiết + Viết API hiển thị chi tiết sách. |
+| **5** | **Nhữ Huy** <br> (`@Vanivietquat`) | **Search Book** | `feature/nhu-huy/search-book` | Xây dựng giao diện tìm kiếm + Viết API tìm kiếm sách. |
+| **6** | **Minh Huy** <br> (`@caominhhuy204`) | **List & Delete** | `feature/minh-huy/list-delete` | Xây dựng hiển thị danh sách sách + Chức năng xóa sách (Delete). |
+| **7** | **Anh Kiệt** <br> (`@KietAnh160704`) | **Sort Book** | `feature/kiet/sort-book` | Chức năng sắp xếp sách theo thứ tự Tăng dần & Giảm dần. |
 ---
 
 ## 📝 QUY ƯỚC COMMIT MESSAGE (CONVENTIONAL)
