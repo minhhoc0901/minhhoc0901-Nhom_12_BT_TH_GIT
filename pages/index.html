@@ -61,6 +61,17 @@
             <h1>
                 <i class="fas fa-book-open"></i> Danh Sách Sách
             </h1>
+            <select id="categoryFilter" class="form-select w-auto d-inline-block" onchange="sortByCategory()">
+                <option value="">-- Tất cả danh mục --</option>
+            </select>
+            <select id="priceSort" class="form-select form-select-sm w-auto" onchange="sortByCategory()">
+                <option value="">-- Sắp xếp giá --</option>
+                <option value="asc">Giá tăng dần</option>
+                <option value="desc">Giá giảm dần</option>
+            </select>
+
+
+
             <button class="btn btn-success btn-add-book" data-bs-toggle="modal" data-bs-target="#addBookModal">
                 <i class="fas fa-plus"></i> Thêm sách mới
             </button>
@@ -208,8 +219,6 @@
         </div>
     </div>
 
-
-
     <!-- EDIT BOOK MODAL -->
     <div class="modal fade" id="editBookModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -290,6 +299,8 @@
         </div>
     </div>
 
+
+
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Action JS -->
@@ -330,13 +341,13 @@
             } catch (error) {
                 console.error('Error loading books:', error);
                 booksList.innerHTML = `
-                        <div class="col-12">
-                            <div class="alert alert-danger">
-                                <i class="fas fa-exclamation-circle"></i> 
-                                Không thể tải danh sách sách. Vui lòng kiểm tra server!
-                            </div>
+                    <div class="col-12">
+                        <div class="alert alert-danger">
+                            <i class="fas fa-exclamation-circle"></i> 
+                            Không thể tải danh sách sách. Vui lòng kiểm tra server!
                         </div>
-                    `;
+                    </div>
+                `;
             } finally {
                 loadingSpinner.classList.add('d-none');
             }
@@ -345,50 +356,50 @@
         // Create book card HTML
         function createBookCard(book) {
             return `
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card book-card">
-                            <div class="position-relative overflow-hidden">
-                                <img src="${book.image}" class="card-img-top book-image" alt="${book.title}" 
-                                    onerror="this.src='https://via.placeholder.com/300x400/667eea/ffffff?text=No+Image'">
-                                <span class="badge bg-info position-absolute top-0 end-0 m-3">
-                                    <i class="fas fa-tag"></i> ${book.category}
-                                </span>
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title" title="${book.title}">${book.title}</h5>
-                                <p class="card-text text-muted small mb-2">
-                                    <i class="fas fa-user-edit"></i> ${book.author}
-                                </p>
-                                <p class="card-text small text-truncate-3 mb-3" title="${book.description}">
-                                    ${book.description}
-                                </p>
-                                <div class="mt-auto">
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <span class="price-tag">${formatPrice(book.price)}₫</span>
-                                        <span class="badge bg-secondary">
-                                            <i class="fas fa-barcode"></i> #${book.id}
-                                        </span>
-                                    </div>
-                                    <div class="d-grid gap-2">
-                                        <a href="book_detail.html?id=${book.id}" class="btn btn-primary btn-sm">
-                                            <i class="fas fa-eye"></i> Xem chi tiết
-                                        </a>
-                                        <div class="btn-group btn-group-sm" role="group">
-                                            <button type="button" class="btn btn-warning btn-edit" 
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card book-card">
+                        <div class="position-relative overflow-hidden">
+                            <img src="${book.image}" class="card-img-top book-image" alt="${book.title}" 
+                                 onerror="this.src='https://via.placeholder.com/300x400/667eea/ffffff?text=No+Image'">
+                            <span class="badge bg-info position-absolute top-0 end-0 m-3">
+                                <i class="fas fa-tag"></i> ${book.category}
+                            </span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title" title="${book.title}">${book.title}</h5>
+                            <p class="card-text text-muted small mb-2">
+                                <i class="fas fa-user-edit"></i> ${book.author}
+                            </p>
+                            <p class="card-text small text-truncate-3 mb-3" title="${book.description}">
+                                ${book.description}
+                            </p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="price-tag">${formatPrice(book.price)}₫</span>
+                                    <span class="badge bg-secondary">
+                                        <i class="fas fa-barcode"></i> #${book.id}
+                                    </span>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <a href="book_detail.html?id=${book.id}" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-eye"></i> Xem chi tiết
+                                    </a>
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <button type="button" class="btn btn-warning btn-edit" 
                                                     data-id="${book.id}" title="Chỉnh sửa" data-bs-toggle="modal" data-bs-target="#editBookModal">
                                                 <i class="fas fa-edit"></i> Sửa
                                             </button>
-                                            <button type="button" class="btn btn-danger btn-delete" 
-                                                    data-id="${book.id}" data-title="${book.title}" title="Xóa sách">
-                                                <i class="fas fa-trash-alt"></i> Xóa
-                                            </button>
-                                        </div>
+                                        <button type="button" class="btn btn-danger btn-delete" 
+                                                data-id="${book.id}" data-title="${book.title}" title="Xóa sách">
+                                            <i class="fas fa-trash-alt"></i> Xóa
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                `;
+                </div>
+            `;
         }
 
         // Format price with thousands separator
@@ -406,111 +417,7 @@
                     deleteModal.show();
                 });
             });
-
-            // Attach edit button handlers
-            attachEditHandlers();
         }
-
-        // Attach edit button handlers
-        function attachEditHandlers() {
-            const editButtons = document.querySelectorAll('.btn-edit');
-            editButtons.forEach(btn => {
-                btn.addEventListener('click', async function (e) {
-                    e.preventDefault();
-                    const bookId = this.dataset.id;
-                    await loadBookForEdit(bookId);
-                });
-            });
-        }
-
-        // Load book data for editing
-        async function loadBookForEdit(bookId) {
-            try {
-                const book = await getBookById(bookId);
-                document.getElementById('editBookId').value = book.id;
-                document.getElementById('editTitle').value = book.title;
-                document.getElementById('editAuthor').value = book.author;
-                document.getElementById('editDescription').value = book.description || '';
-                document.getElementById('editPrice').value = book.price;
-                document.getElementById('editCategory').value = book.category;
-
-                // Show current image preview
-                const imagePreview = document.getElementById('editImagePreview');
-                if (book.image) {
-                    imagePreview.src = book.image;
-                    imagePreview.style.display = 'block';
-                } else {
-                    imagePreview.style.display = 'none';
-                }
-
-                // Reset file input
-                document.getElementById('editImage').value = '';
-            } catch (error) {
-                console.error('Error loading book for edit:', error);
-                showNotification('Không thể tải dữ liệu sách', 'danger');
-            }
-        }
-
-        // Update book from index.html modal
-        async function UpdateBookFromIndex(event) {
-            event.preventDefault();
-            const bookId = document.getElementById('editBookId').value;
-            const imageInput = document.getElementById('editImage');
-
-            const updatedBook = {
-                title: document.getElementById('editTitle').value,
-                author: document.getElementById('editAuthor').value,
-                description: document.getElementById('editDescription').value,
-                price: Number(document.getElementById('editPrice').value),
-                category: document.getElementById('editCategory').value
-            };
-
-            // Handle image upload if a new file is selected
-            if (imageInput.files.length > 0) {
-                updatedBook.image = `../images/${imageInput.files[0].name}`;
-            }
-
-            try {
-                const response = await fetch(`${API_URL}/books/${bookId}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(updatedBook)
-                });
-
-                if (!response.ok) {
-                    throw new Error('Cập nhật thất bại');
-                }
-
-                showNotification('Cập nhật sách thành công!', 'success');
-
-                // Close modal
-                const modal = bootstrap.Modal.getInstance(document.getElementById('editBookModal'));
-                modal.hide();
-
-                // Reload books
-                loadBooks();
-            } catch (error) {
-                console.error('Error updating book:', error);
-                showNotification('Không thể cập nhật sách', 'danger');
-            }
-        }
-
-        // Preview image before upload
-        document.getElementById('editImage').addEventListener('change', function (e) {
-            const preview = document.getElementById('editImagePreview');
-            const file = e.target.files[0];
-
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    preview.src = event.target.result;
-                    preview.style.display = 'block';
-                };
-                reader.readAsDataURL(file);
-            }
-        });
 
         // Confirm delete handler
         document.getElementById('confirmDeleteBtn').addEventListener('click', async function () {
@@ -549,9 +456,9 @@
             notification.style.zIndex = '9999';
             notification.style.minWidth = '300px';
             notification.innerHTML = `
-                    <i class="fas ${iconClass}"></i> ${message}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                `;
+                <i class="fas ${iconClass}"></i> ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
             document.body.appendChild(notification);
 
             setTimeout(() => notification.remove(), 3000);
